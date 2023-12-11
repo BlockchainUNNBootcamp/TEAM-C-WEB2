@@ -184,6 +184,7 @@ input {
   color: var(--Marine-blue);
   font-weight: 700;
   cursor: pointer;
+  margin-bottom: 1rem;
 }
 input:focus {
   outline: 1px solid var(--Purplish-blue);
@@ -216,4 +217,10 @@ button {
 .error {
   outline: 1px solid var(--Strawberry-red);
   border: 1px solid var(--Strawberry-red);
+}
+.stepForm.active {
+  display: block;
+}
+.stepForm {
+  display: none;
 }
