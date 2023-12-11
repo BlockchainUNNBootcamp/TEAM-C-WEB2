@@ -1,0 +1,219 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+:root {
+  --Marine-blue: hsl(213, 96%, 18%);
+  --Purplish-blue: hsl(243, 100%, 62%);
+  --Pastel-blue: hsl(228, 100%, 84%);
+  --Light-blue: hsl(206, 94%, 87%);
+  --Strawberry-red: hsl(354, 84%, 57%);
+  --Cool-gray: hsl(231, 11%, 63%);
+  --Light-gray: hsl(229, 24%, 87%);
+  --Magnolia: hsl(217, 100%, 97%);
+  --Alabaster: hsl(231, 100%, 99%);
+  --White: hsl(0, 0%, 100%);
+}
+:root {
+  font-family: "Ubuntu", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: var(--Cool-gray);
+  background-color: var(--Magnolia);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: inherit;
+}
+p {
+  font-size: 1em;
+  margin: 0;
+}
+h2 {
+  font-weight: 700;
+  color: var(--Marine-blue);
+  font-size: 1.6em;
+  margin: 0;
+}
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+button {
+  cursor: pointer;
+}
+
+.grid {
+  display: grid;
+}
+.mainConatiner {
+  background-color: hsl(0, 0%, 100%);
+  grid-template-columns: repeat(3, 1fr);
+  padding: 1rem;
+  border-radius: 8px;
+  gap: 1rem;
+  margin: 0 auto;
+}
+.side-bar {
+  background: url("./assets/images/bg-sidebar-desktop.svg") center;
+  height: 100%;
+  width: 100%;
+  border-radius: 8px;
+  color: var(--White);
+}
+.side-bar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 2rem;
+}
+.step {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-transform: uppercase;
+}
+.step-NB {
+  display: grid;
+  place-content: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  border: 1px solid hsl(0, 0%, 100%);
+}
+.step-NB.active {
+  color: hsl(213, 96%, 18%);
+  background-color: hsl(206, 94%, 87%);
+  border: 1px solid hsl(206, 94%, 87%);
+}
+.step-info {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+.small-step {
+  text-align: start;
+  color: var(--Cool-gray);
+}
+ul {
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+.plan-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.plan {
+  background-color: transparent;
+  border: 1px solid var(--Light-gray);
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: flex-start;
+}
+.plan:hover {
+  border: 1px solid var(--Purplish-blue);
+  transition: all 0.3s ease-out;
+}
+.plan-name {
+  color: var(--Marine-blue);
+  text-align: start;
+  font-weight: 500;
+  font-size: 1.2em;
+}
+.plan-price {
+  color: var(--Cool-gray);
+  text-align: start;
+}
+.step-2 {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.btns-div {
+  display: flex;
+  justify-content: space-between;
+}
+.plan.active {
+  border: 1px solid var(--Purplish-blue);
+}
+.forms-container {
+  grid-column: span 2;
+  padding: 3rem;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.label-div {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+label {
+  display: inline-block;
+  text-align: start;
+  font-weight: 500;
+  color: var(--Marine-blue);
+}
+input {
+  width: 100%;
+  padding: 0.7rem;
+  border-radius: 8px;
+  background-color: transparent;
+  border: 1px solid var(--Cool-gray);
+  color: var(--Marine-blue);
+  font-weight: 700;
+  cursor: pointer;
+}
+input:focus {
+  outline: 1px solid var(--Purplish-blue);
+  border: 1px solid var(--Purplish-blue);
+}
+
+input::placeholder {
+  color: var(--Cool-gray);
+}
+.btn-div {
+  display: flex;
+  justify-content: flex-end;
+  align-self: flex-end;
+  margin-top: 2rem;
+}
+button {
+  padding: 0.7rem;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--Marine-blue);
+}
+.err-msg {
+  color: var(--Strawberry-red);
+  font-weight: 500;
+  visibility: hidden;
+}
+.err-msg.active {
+  visibility: visible;
+}
+.error {
+  outline: 1px solid var(--Strawberry-red);
+  border: 1px solid var(--Strawberry-red);
+}
