@@ -23,6 +23,11 @@ multiStepForm.addEventListener("click", (e) => {
     const errorMsgs = formSteps[currentStep].querySelectorAll(".err-msg");
     const allValid = Array.from(inputs).every((input) => input.checkValidity());
     if (allValid) {
+      const formData = new FormData(multiStepForm);
+      const formObject = Object.fromEntries(formData);
+      const jsonData = JSON.stringify(formObject);
+      localStorage.setItem("formValues", jsonData);
+      console.log(jsonData);
       currentStep += 1;
       showCurrentStep();
     } else {
