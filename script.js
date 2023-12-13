@@ -1,7 +1,11 @@
 const multiStepForm = document.querySelector("[data-multi-step]");
 const formSteps = document.querySelectorAll("[data-step]");
+const pageSteps = document.querySelectorAll("[data-form-step]");
 let currentStep = Array.from(formSteps).findIndex((step) => {
   return step.classList.contains("active");
+});
+let currentPage = Array.from(pageSteps).findIndex((page) => {
+  return page.classList.contains("active");
 });
 const showCurrentStep = () => {
   formSteps.forEach((step, index) => {
@@ -12,9 +16,21 @@ const showCurrentStep = () => {
     }
   });
 };
+
+const showCurrentPage = () => {
+  pageSteps.forEach((page, index) => {
+    if (currentPage === index) {
+      page.classList.add("active");
+    } else {
+      page.classList.remove("active");
+    }
+  });
+};
 if (currentStep < 0) {
   currentStep = 0;
+  currentPage = 0;
   showCurrentStep();
+  showCurrentPage();
 }
 
 multiStepForm.addEventListener("click", (e) => {
@@ -27,9 +43,10 @@ multiStepForm.addEventListener("click", (e) => {
       const formObject = Object.fromEntries(formData);
       const jsonData = JSON.stringify(formObject);
       localStorage.setItem("formValues", jsonData);
-      console.log(jsonData);
       currentStep += 1;
+      currentPage += 1;
       showCurrentStep();
+      showCurrentPage();
     } else {
       Array.from(inputs).forEach((input) => {
         if (!input.checkValidity()) {
