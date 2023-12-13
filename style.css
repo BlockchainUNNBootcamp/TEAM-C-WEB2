@@ -58,10 +58,8 @@ button {
   cursor: pointer;
 }
 
-.grid {
-  display: grid;
-}
 .mainConatiner {
+  display: grid;
   background-color: hsl(0, 0%, 100%);
   grid-template-columns: repeat(3, 1fr);
   padding: 1rem;
@@ -223,4 +221,28 @@ button {
 }
 .stepForm {
   display: none;
+}
+@media only screen and (max-width: 375px) {
+  .side-bar {
+    background: url("./assets/images/bg-sidebar-mobile.svg") center no-repeat;
+    padding: 1rem 0rem 5rem 0rem;
+    border-radius: 0%;
+  }
+  .mainConatiner {
+    display: flex;
+    flex-direction: column;
+    /* display: grid; */
+    /* grid-template-rows: 1fr 1fr 1fr; */
+    padding: 0;
+  }
+  .side-bar-container {
+    padding: 0rem 1rem;
+    flex-direction: row;
+  }
+  .small-step,
+  .step-name {
+    display: none;
+  }
+  .form {
+  }
 }
