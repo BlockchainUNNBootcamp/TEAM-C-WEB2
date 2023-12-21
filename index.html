@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+    <script src="./script.js" defer></script>
+    <title>Frontend Mentor | Multi-step form</title>
+  </head>
+  <body>
+    <main class="grid mainConatiner">
+      <aside class="side-bar">
+        <ul class="side-bar-container">
+          <li>
+            <div class="step">
+              <span data-form-step class="step-NB">1</span>
+              <div class="step-info">
+                <small class="small-step">Step 1</small>
+                <p class="step-name">Your info</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="step">
+              <span data-form-step class="step-NB">2</span>
+              <div class="step-info">
+                <small class="small-step">Step 2</small>
+                <p class="step-name">Select plan</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="step">
+              <span data-form-step class="step-NB">3</span>
+              <div class="step-info">
+                <small class="small-step">Step 3</small>
+                <p class="step-name">Add-ons</p>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="step">
+              <span data-form-step class="step-NB">4</span>
+              <div class="step-info">
+                <small class="small-step">Step 4</small>
+                <p class="step-name">Summary</p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </aside>
+      <section class="forms-container">
+        <form class="form" data-multi-step action="">
+          <div data-step class="stepForm">
+            <h2>Personal info</h2>
+            <p>Please provide your name, email address, and phone number.</p>
+            <div>
+              <div class="label-div">
+                <label htmlFor="Name">Name</label>
+                <small data-error-for="Name" class="err-msg"
+                  >This field is required</small
+                >
+              </div>
+              <input
+                type="text"
+                placeholder="e.g. Stephen King"
+                name="Name"
+                id="Name"
+                required
+              />
+            </div>
+            <div>
+              <div class="label-div">
+                <label htmlFor="EmailAddress">Email Address</label>
+                <small data-error-for="EmailAddress" class="err-msg"
+                  >Email is required</small
+                >
+              </div>
+              <input
+                type="email"
+                name="EmailAddress"
+                id="EmailAddress"
+                placeholder=" e.g. stephenking@lorem.com"
+                required
+              />
+            </div>
+            <div>
+              <div class="label-div">
+                <label htmlFor="PhoneNumber">Phone Number</label>
+                <small data-error-for="PhoneNumber" class="err-msg"
+                  >This field is required</small
+                >
+              </div>
+              <input
+                type="tel"
+                name="PhoneNumber"
+                id="PhoneNumber"
+                placeholder="e.g. +1 234 567 890"
+                required
+              />
+            </div>
+            <div class="btn-div">
+              <button data-next type="button">Next Step</button>
+            </div>
+          </div>
+          <div class="stepForm" data-step></div>
+          <div class="stepForm" data-step></div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
